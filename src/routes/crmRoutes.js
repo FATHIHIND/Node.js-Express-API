@@ -1,4 +1,5 @@
 import { runInNewContext } from "vm";
+import { addNewContact } from '../controllers/crmControllers';
 
 const routes = (app) => {
     app.route('/contact')
@@ -12,8 +13,7 @@ const routes = (app) => {
     })
         
     
-    .post((req, res) =>
-        res.send('demande POST avec succès'));
+    .post(addNewContact);
     
     app.route('/contact/:contactId')
         .put((req, res) =>
